@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph1"
+    app:startDestination="@id/HeadlinesFragment">
+
+    <fragment
+        android:id="@+id/HeadlinesFragment"
+        android:name="com.example.redcarpet.Headlines_fragment"
+        android:label="landing_fragment"
+        tools:layout="@layout/headlines_fragment" >
+        <action
+            android:id="@+id/action_HeadlinesFragment_to_DetailnewsFragment"
+            app:destination="@id/DetailnewsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/DetailnewsFragment"
+        android:name="com.example.redcarpet.Detail_news"
+        android:label="fragment_news_detail"
+        tools:layout="@layout/news_details" >
+        <action
+            android:id="@+id/action_DetailnewsFragment_to_HeadlinesFragment"
+            app:destination="@id/HeadlinesFragment" />
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument
+            android:name="Author"
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument android:name="content"
+            app:argType="string"
+            android:defaultValue="default"/>
+        <argument
+            android:name="source1name"
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument
+            android:name="urltoimage"
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument
+            android:name="publisheddate"
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue="default" />
+        <argument
+            android:name="unkown"
+            app:argType="string"
+            android:defaultValue="default" />
+
+    </fragment>
+
+</navigation>
