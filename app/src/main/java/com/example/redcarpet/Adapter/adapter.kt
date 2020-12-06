@@ -1,6 +1,7 @@
 package com.example.redcarpet.Adapter
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.redcarpet.model.Article1
 import com.example.redcarpet.GlideApp
+import com.example.redcarpet.GlideApp.init
 import com.example.redcarpet.Headlines_fragmentDirections
 import com.example.redcarpet.R
 import kotlinx.android.synthetic.main.news_item.view.*
@@ -57,21 +59,24 @@ class adapter:RecyclerView.Adapter<adapter.NewsViewHolder>() {
                 else{
                     itemView.Host.text = "unknown"
                 }
-                itemView.card.setOnClickListener {
-                    findNavController().navigate(
-                        Headlines_fragmentDirections.actionHeadlinesFragmentToDetailnewsFragment(
-                            article.title!!,
-                            article.author!!,
-                            article.content1!!,
-                            article.source1.name!!,
-                            article.urlToImage!!,
-                            article.url!!,
-                            article.publishedAt!!,
-                            article.description!!,
-                            "unknown"
+             //   itemView.card.
+
+                    itemView.setOnClickListener {
+                        findNavController().navigate(
+                            Headlines_fragmentDirections.actionHeadlinesFragmentToDetailnewsFragment(
+                                article.title!!,
+                                article.author!!,
+                                article.content1!!,
+                                article.source1.name!!,
+                                article.urlToImage!!,
+                                article.url!!,
+                                article.publishedAt!!,
+                                article.description!!,
+                                "unknown"
+                            )
                         )
-                    )
-                }
+                    }
+
             }
         }
         companion object{
